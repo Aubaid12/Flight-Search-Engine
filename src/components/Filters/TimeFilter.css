@@ -1,0 +1,47 @@
+.time-options {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-2);
+}
+
+.time-option {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-1);
+    padding: var(--space-3);
+    background: transparent;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.time-option:hover {
+    border-color: var(--color-primary);
+    background: rgba(99, 102, 241, 0.05);
+}
+
+.time-option.selected {
+    border-color: var(--color-primary);
+    background: rgba(99, 102, 241, 0.1);
+}
+
+.time-option .time-icon {
+    color: var(--text-muted);
+}
+
+.time-option.selected .time-icon {
+    color: var(--color-primary);
+}
+
+.time-label {
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.time-sublabel {
+    font-size: 0.7rem;
+    color: var(--text-muted);
+}

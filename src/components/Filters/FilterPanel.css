@@ -1,0 +1,163 @@
+/* Filter Panel - Main Container */
+.filter-panel {
+    width: 280px;
+    flex-shrink: 0;
+}
+
+.filter-content {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    padding: 20px;
+    position: sticky;
+    top: 16px;
+}
+
+.filter-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.filter-title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    flex: 1;
+}
+
+.clear-filters-btn {
+    font-size: 0.8rem;
+    color: var(--color-primary-light);
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: color 0.15s ease;
+}
+
+.clear-filters-btn:hover {
+    color: var(--color-primary);
+    text-decoration: underline;
+}
+
+.filter-close-btn {
+    display: none;
+}
+
+.filter-sections {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.filter-section {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.filter-section-title {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Mobile Styles */
+.filter-overlay {
+    display: none;
+}
+
+.filter-drawer {
+    display: none;
+}
+
+.apply-filters-btn {
+    display: none;
+}
+
+@media (max-width: 1024px) {
+    .filter-panel {
+        display: none;
+    }
+
+    .filter-overlay {
+        display: block;
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.6);
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.25s ease;
+        z-index: 999;
+    }
+
+    .filter-overlay.open {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .filter-drawer {
+        display: block;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        max-height: 85vh;
+        background: var(--bg-secondary);
+        border-radius: 24px 24px 0 0;
+        z-index: 1000;
+        transform: translateY(100%);
+        transition: transform 0.25s ease-out;
+        overflow-y: auto;
+    }
+
+    .filter-drawer.open {
+        transform: translateY(0);
+    }
+
+    .filter-drawer .filter-content {
+        background: transparent;
+        border: none;
+        border-radius: 0;
+        padding: 20px;
+        padding-bottom: calc(20px + env(safe-area-inset-bottom, 0px));
+    }
+
+    .filter-drawer .filter-header {
+        position: sticky;
+        top: 0;
+        background: var(--bg-secondary);
+        padding-top: 16px;
+        margin-top: -16px;
+    }
+
+    .filter-drawer .filter-close-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 36px;
+        height: 36px;
+        background: var(--bg-tertiary);
+        border: none;
+        border-radius: 50%;
+        color: var(--text-primary);
+        cursor: pointer;
+    }
+
+    .filter-drawer .apply-filters-btn {
+        display: block;
+        width: 100%;
+        margin-top: 20px;
+    }
+}

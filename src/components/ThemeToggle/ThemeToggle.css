@@ -1,0 +1,59 @@
+.theme-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.toggle-track {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 56px;
+    height: 28px;
+    padding: 0 6px;
+    background: var(--bg-tertiary);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-full);
+    transition: all var(--transition-fast);
+}
+
+.toggle-track:hover {
+    border-color: var(--color-primary);
+}
+
+.toggle-icon {
+    z-index: 1;
+    transition: all var(--transition-fast);
+}
+
+.toggle-icon.sun {
+    color: #fbbf24;
+}
+
+.toggle-icon.moon {
+    color: #94a3b8;
+}
+
+.toggle-thumb {
+    position: absolute;
+    top: 3px;
+    width: 20px;
+    height: 20px;
+    background: var(--color-primary);
+    border-radius: 50%;
+    transition: all var(--transition-normal);
+    box-shadow: var(--shadow-md);
+}
+
+.toggle-thumb.dark {
+    left: calc(100% - 23px);
+}
+
+.toggle-thumb.light {
+    left: 3px;
+}
